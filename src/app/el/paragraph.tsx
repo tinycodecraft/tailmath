@@ -6,19 +6,19 @@ const ElCode = styled("code")`
   font-family: var(--font-machine);
 `;
 
-const ElWholeColumn=styled(Stack,{
-    shouldForwardProp: (prop)=> true
-})
-(({theme})=> ({
+// const ElWholeColumn=styled(Stack,{
+//     shouldForwardProp: (prop)=> true
+// })
+// (({theme})=> ({
 
-}));
+// }));
 
-ElWholeColumn.defaultProps ={
-    minHeight: '100vh',
-    direction: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-}
+// ElWholeColumn.defaultProps ={
+//     minHeight: '100vh',
+//     direction: 'column',
+//     justifyContent: 'space-between',
+//     alignItems: 'center'
+// }
 
 const Eltagparg = styled(Typography,{
     // Configure which props should be forwarded on DOM
@@ -50,4 +50,4 @@ const Elbody = styled("body")`
 `;
 
 
-export  { Elbody,Eltagparg,ElWholeColumn,ElCode }
+export  { Elbody,Eltagparg,ElCode }

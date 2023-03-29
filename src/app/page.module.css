@@ -1,4 +1,3 @@
-
 .description {
   display: inherit;
   justify-content: inherit;
@@ -22,11 +21,6 @@
   margin: 0;
   padding: 1rem;
 
-}
-
-.code {
-  font-weight: 700;
-  font-family: var(--font-machine);
 }
 
 .grid {

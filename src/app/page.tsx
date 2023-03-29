@@ -3,7 +3,8 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import MuLink from './ui/MuLink'
 import styles from './page.module.css'
-import { ElCode, ElWholeColumn, Eltagparg } from './el/paragraph'
+import { ElCode, Eltagparg } from './el/paragraph'
+import { Stack } from '@mui/material'
 
 
 
@@ -12,7 +13,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <ElWholeColumn>
+    <main className='flex flex-col min-h-screen justify-between justify-items-center p-[6rem]'>
       <div className={styles.description}>
         <Eltagparg variant="plight">Get second by editing&nbsp;<ElCode>src/app/page.tsx</ElCode></Eltagparg>
         <div>
@@ -91,6 +92,6 @@ export default function Home() {
           </p>
         </a>
       </div>
-    </ElWholeColumn>
+    </main>
   )
 }
