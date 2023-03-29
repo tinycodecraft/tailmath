@@ -1,14 +1,20 @@
+'use client'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import MuLink from './ui/MuLink'
 import styles from './page.module.css'
+import { ElWholeColumn, Eltagparg } from './el/paragraph'
+
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <ElWholeColumn>
       <div className={styles.description}>
+        <Eltagparg variant="plight">Get second by editing</Eltagparg>
         <p>
           Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.tsx</code>
@@ -89,6 +95,6 @@ export default function Home() {
           </p>
         </a>
       </div>
-    </main>
+    </ElWholeColumn>
   )
 }
