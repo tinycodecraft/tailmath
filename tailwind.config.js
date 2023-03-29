@@ -1,11 +1,26 @@
 /** @type {import('tailwindcss').Config} */
+
+
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   corePlugins: {
     preflight: false,
   },
   content: ["./app/**/*.{js,ts,jsx,tsx,css}"],  
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        whatever: {
+          dark: '#LC2026'
+        }
+      },
+      fontFamily:{
+        baseMachine: [ 'var(--font-machine)', ...fontFamily.sans]
+      }
+
+
+    },
   },
   plugins: [],
 }

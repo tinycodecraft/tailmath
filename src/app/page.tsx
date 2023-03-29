@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import MuLink from './ui/MuLink'
 import styles from './page.module.css'
-import { ElWholeColumn, Eltagparg } from './el/paragraph'
+import { ElCode, ElWholeColumn, Eltagparg } from './el/paragraph'
 
 
 
@@ -14,11 +14,7 @@ export default function Home() {
   return (
     <ElWholeColumn>
       <div className={styles.description}>
-        <Eltagparg variant="plight">Get second by editing</Eltagparg>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
+        <Eltagparg variant="plight">Get second by editing&nbsp;<ElCode>src/app/page.tsx</ElCode></Eltagparg>
         <div>
           <MuLink
              href='https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'

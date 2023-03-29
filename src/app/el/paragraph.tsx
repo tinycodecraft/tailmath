@@ -1,6 +1,11 @@
 import {styled} from '@mui/material/styles'
 import { Typography,Stack } from '@mui/material';
 
+const ElCode = styled("code")`
+  font-weight: 700;
+  font-family: var(--font-machine);
+`;
+
 const ElWholeColumn=styled(Stack,{
     shouldForwardProp: (prop)=> true
 })
@@ -45,4 +50,4 @@ const Elbody = styled("body")`
 `;
 
 
-export  { Elbody,Eltagparg,ElWholeColumn }
+export  { Elbody,Eltagparg,ElWholeColumn,ElCode }

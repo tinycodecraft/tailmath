@@ -1,5 +1,6 @@
 import { createTheme } from '@mui/material/styles'
 
+
 const MuTheme = createTheme({
   components: {
     MuiUseMediaQuery: {
@@ -8,6 +9,14 @@ const MuTheme = createTheme({
       },
     },
 
+    // MuiCssBaseline:{
+    //   styleOverrides:`
+    //     @font-face {
+    //       font-family: var(--font-machine);
+    //     }
+
+    //   `
+    // },
     MuiTypography: {
       defaultProps: {
         variantMapping: {
@@ -30,7 +39,9 @@ const MuTheme = createTheme({
     },
   },
   typography: {
+    
     pdark: {
+      
       backgroundColor: 'rgba(20, 20, 20,0.5)',      
       borderColor: 'rgba(172, 175, 176, 0.3)',
     },
