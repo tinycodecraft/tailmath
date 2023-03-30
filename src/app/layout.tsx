@@ -1,6 +1,6 @@
 'use client'
 import './globals.css'
-import Head from 'next/head'
+import { Global,css } from '@emotion/react'
 import { MuTheme } from './ui/themes'
 import { ThemeProvider, CssBaseline } from '@mui/material'
 import { Elbody } from './el/paragraph'
@@ -12,20 +12,27 @@ const novaMono = localFont({
   variable: '--font-machine',
 })
 
+const techMono = localFont({
+  src: './assets/share_tech_mono/share-tech-mono-v15-latin-regular.ttf',
+  variable: '--font-tech'
+
+})
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
       <ThemeProvider theme={MuTheme}>
-        <>
-          <style jsx global>{`
+      <CssBaseline />
+        <Global styles={css`
             :root {
               --font-machine: ${novaMono.style.fontFamily};
-            }
-          `}</style>
-        </>
-        <CssBaseline />
+              --font-tech: ${techMono.style.fontFamily};
+              --max-width: calc(100vw - 10px);
+            }          
+        `} />
 
         <Elbody>{children}</Elbody>
+        
       </ThemeProvider>
     </html>
   )

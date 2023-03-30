@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import MuLink from './ui/MuLink'
 import styles from './page.module.css'
-import { ElCode, Eltagparg } from './el/paragraph'
+import { ElCode, ElHeadBanDescription, ElThreeCellWrapper, Eltagparg } from './el/paragraph'
 import { Stack } from '@mui/material'
 
 
@@ -14,10 +14,9 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main className='flex flex-col min-h-screen justify-between justify-items-center p-[6rem]'>
-      <div className={styles.description}>
+      <ElHeadBanDescription>
         <Eltagparg variant="plight">Get second by editing&nbsp;<ElCode>src/app/page.tsx</ElCode></Eltagparg>
-        <div>
-          <MuLink
+        <MuLink
              href='https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
              target='_blank'
              rel='noopener noreferrer'
@@ -34,8 +33,7 @@ export default function Home() {
             />
              
           </MuLink>
-        </div>
-      </div>
+      </ElHeadBanDescription>
 
       <div className={styles.center}>
         <Image
@@ -51,7 +49,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={styles.grid}>
+      <ElThreeCellWrapper>
         <a
           href='https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
           className={styles.card}
@@ -91,7 +89,7 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
-      </div>
+      </ElThreeCellWrapper>
     </main>
   )
 }

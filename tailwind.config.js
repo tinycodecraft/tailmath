@@ -16,7 +16,8 @@ module.exports = {
         }
       },
       fontFamily:{
-        baseMachine: [ 'var(--font-machine)', ...fontFamily.sans]
+        baseMachine: [ 'var(--font-machine)', ...fontFamily.sans],
+        baseTech: ['var(--font-tech)',...fontFamily.serif],
       }
 
 
