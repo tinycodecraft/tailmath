@@ -28,6 +28,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               --font-machine: ${novaMono.style.fontFamily};
               --font-tech: ${techMono.style.fontFamily};
               --max-width: calc(100vw - 10px);
+              --border-radius: 12px;
+              --grey-shadow: 0px 2px 8px -1px #0000001a;
             }          
         `} />
 

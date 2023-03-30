@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import MuLink from './ui/MuLink'
 import styles from './page.module.css'
-import { ElCenterGlowSvg, ElCode, ElHeadBanDescription, ElThreeCellWrapper, Eltagparg } from './el/paragraph'
+import { ElCenterGlowSvg, ElCode, ElHeadBanDescription, ElShadowSvg, ElThreeCellWrapper, Eltagparg } from './el/paragraph'
 import { Stack } from '@mui/material'
 
 
@@ -43,9 +43,9 @@ export default function Home() {
           height={37}
           priority
         />
-        <div className={styles.thirteen}>
+        <ElShadowSvg variant='blocksquare'>
           <Image src='/thirteen.svg' alt='13' width={40} height={31} priority />
-        </div>
+        </ElShadowSvg>
       </ElCenterGlowSvg>      
 
       <ElThreeCellWrapper>

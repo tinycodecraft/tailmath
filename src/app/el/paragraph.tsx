@@ -34,6 +34,7 @@ const ElCenterGlowSvg = styled("div")(({theme})=> ({
   '&::after': {
     background: `${theme.palette.mode == "light" ? theme.palette.sunGlow.primaryGlow: theme.palette.dimGlow.primaryGlow}`,
     zIndex: -1,
+    //Please match the after svg size
     width: '240px',
     height: '180px',
 
@@ -49,13 +50,44 @@ const ElCenterGlowSvg = styled("div")(({theme})=> ({
 
 
 }));
-  // width: 480px;
-  // height: 360px;
-// content: '';
-// left: 50%;
-// position: absolute;
-// filter: blur(45px);
-// transform: translateZ(0);
+
+const ElShadowSvg=styled(Typography,{
+  // Configure which props should be forwarded on DOM
+ shouldForwardProp: (prop) =>  true //prop !== 'dark' && prop!== 'border' 
+ })
+
+ (({ variant, theme }) => ({
+  transform: 'translateZ(0)',
+  borderRadius: 'var(--border-radius)',
+  overflow: 'hidden',
+  boxShadow: 'var(--grey-shadow)',
+  '&::before, &::after' : {
+    content: '""',
+    position: 'absolute',
+    zIndex: -1
+  },
+  '&::before': {
+    animation: '6s rotate linear infinite',
+    width: '200%',
+    height: '200%',
+    background: 'var(--tile-border)'
+
+  },
+  
+  '&::after': {
+    inset: 0,
+    padding: '1px',
+    borderRadius: 'var(--border-radius)',     
+    background: `linear-gradient(
+      to bottom right,
+      ${theme.palette.mode == "light"? theme.palette.sunTile.startColor : theme.palette.dimTile.startColor},
+      ${theme.palette.mode == "light"? theme.palette.sunTile.endColor : theme.palette.dimTile.endColor}
+    )`,
+    backgroundClip: 'content-box', 
+  }
+
+ }));
+
 
 const ElThreeCellWrapper = styled("div")`
   display: grid;
@@ -93,7 +125,7 @@ const Eltagparg = styled(Typography,{
    (({ variant, theme }) => ({
     borderStyle: 'solid',
     borderWidth: '1px',
-    borderRadius: '12px',
+    borderRadius: 'var(--border-radius)',
     position: 'relative',
     margin: 0,
     padding: '1rem',
@@ -109,4 +141,4 @@ const Eltagparg = styled(Typography,{
 
 
 
-export  { Elbody,Eltagparg,ElCode, ElHeadBanDescription, ElThreeCellWrapper,ElCenterGlowSvg }
+export  { Elbody,Eltagparg,ElCode, ElHeadBanDescription, ElThreeCellWrapper,ElCenterGlowSvg ,ElShadowSvg}

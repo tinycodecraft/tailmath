@@ -2,6 +2,13 @@ import { createTheme } from '@mui/material/styles'
 
 
 const MuTheme = createTheme({
+  block: {
+    square: {
+      width: '75px',
+      height: '75px',
+    }
+  },
+  
   components: {
     MuiUseMediaQuery: {
       defaultProps: {
@@ -22,11 +29,13 @@ const MuTheme = createTheme({
         variantMapping: {
           plight: 'p',
           pdark: 'p',
+          blocksquare: 'div',
         },
       },
     },
   },
   palette: {
+    
     sunShade: {
       frontColor: 'rgb(0, 0, 0)',
       bgStartColor: 'rgb(214, 219, 220)',
@@ -61,10 +70,39 @@ const MuTheme = createTheme({
         rgba(1, 65, 255, 0),
         rgba(1, 65, 255, 0.3)
       )`,
+    },
+    sunTile: {
+      startColor: `rgba(239, 245, 249,1)`,
+      endColor: `rgba(228, 232, 233,1)`,
+      borderColor: `conic-gradient(
+        #00000080,
+        #00000040,
+        #00000030,
+        #00000020,
+        #00000010,
+        #00000010,
+        #00000080
+      )`
+    },
+    dimTile: {
+      startColor: `rgba(2,13,46,1)`,
+      endColor: `rgba(2,5,19,1)`,
+      borderColor: `conic-gradient(
+        #ffffff80,
+        #ffffff40,
+        #ffffff30,
+        #ffffff20,
+        #ffffff10,
+        #ffffff10,
+        #ffffff80
+      )`
+
     }
 
   },
+ 
   typography: {
+
     
     pdark: {
       
@@ -76,6 +114,16 @@ const MuTheme = createTheme({
       borderColor: 'rgba(108, 108, 108, 0.3)',
     },
 
+    blocksquare: {
+      width: '75px',
+      height: '75px',
+      padding: '15px 10px',
+      marginLeft: '16px',
+      display: 'flex',
+      alignContent: 'center',
+      alignItems: 'center',
+
+    }
     
 
   },
