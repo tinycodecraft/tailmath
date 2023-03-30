@@ -122,6 +122,7 @@ const MuTheme = createTheme({
       display: 'flex',
       alignContent: 'center',
       alignItems: 'center',
+      position: 'relative'
 
     }
     

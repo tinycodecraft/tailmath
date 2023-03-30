@@ -36,7 +36,7 @@ export default function Home() {
       </ElHeadBanDescription>
       <ElCenterGlowSvg>
         <Image
-          className={styles.logo}
+          className='relative'
           src='/next.svg'
           alt='Next.js Logo'
           width={180}
