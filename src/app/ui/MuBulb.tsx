@@ -16,7 +16,7 @@ function LightBulbIcon(props: SvgIconProps) {
 export default function MuBulb(props: LinkProps & { title: string }) {
   const { title, href, children, ...other } = props
   return (
-    <Card variant='outlined'>
+    <Card variant='outlined' sx={{boxShadow:'none', border:'none'}} className='hover:shadow-md m-5'>
       <CardContent>
         <MuLink href={href} {...other}>
           <Typography variant='h5' sx={{ display: 'flex' }}>
