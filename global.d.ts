@@ -10,13 +10,17 @@ import {
   
   declare module '@mui/material/styles/createPalette' {
     interface Palette extends MuiPallete {
-      sunShade: { frontColor: string, bgStartColor: string, bgEndColor };
-      dimShade: { frontColor: string, bgStartColor: string, bgEndColor };
+      sunShade: { frontColor: string, bgStartColor: string, bgEndColor: string };
+      dimShade: { frontColor: string, bgStartColor: string, bgEndColor: string };
+      sunGlow: { primaryGlow: string, secondaryGlow: string };
+      dimGlow: { primaryGlow: string, secondaryGlow: string };
     }
   
     interface PaletteOptions extends MuiPaletteOptions {
-      sunShade?:  { frontColor: string, bgStartColor: string, bgEndColor };
-      dimShade: { frontColor: string, bgStartColor: string, bgEndColor };
+      sunShade?:  { frontColor: string, bgStartColor: string, bgEndColor: string };
+      dimShade: { frontColor: string, bgStartColor: string, bgEndColor: string };
+      sunGlow: { primaryGlow: string, secondaryGlow: string };
+      dimGlow: { primaryGlow: string, secondaryGlow: string };
     }
   }
 
@@ -59,12 +63,4 @@ declare module "@mui/material/Typography" {
     }
   }
 
-  declare module "*.ttf" {
-    const value: any;
-    export =value;
-  }
-
-  declare module "*.woff" {
-    const value: any;
-    export =value;
-  }
+  

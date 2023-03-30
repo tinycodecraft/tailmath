@@ -37,6 +37,32 @@ const MuTheme = createTheme({
       bgStartColor: 'rgb(0,0,0)',
       bgEndColor: 'rgb(0,0,0)',
     },
+    sunGlow: {
+      primaryGlow: `conic-gradient(
+        from 180deg at 50% 50%,
+        #16abff33 0deg,
+        #0885ff33 55deg,
+        #54d6ff33 120deg,
+        #0071ff33 160deg,
+        transparent 360deg
+      )`,
+      secondaryGlow: `radial-gradient(
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0)
+      )
+      `
+
+    },
+    dimGlow: {
+      primaryGlow: `radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0))`,
+      secondaryGlow: `linear-gradient(
+        to bottom right,
+        rgba(1, 65, 255, 0),
+        rgba(1, 65, 255, 0),
+        rgba(1, 65, 255, 0.3)
+      )`,
+    }
+
   },
   typography: {
     
@@ -49,6 +75,9 @@ const MuTheme = createTheme({
       backgroundColor: 'rgba(238, 240, 241,0.5)',      
       borderColor: 'rgba(108, 108, 108, 0.3)',
     },
+
+    
+
   },
 })
 

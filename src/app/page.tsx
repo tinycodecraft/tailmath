@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import MuLink from './ui/MuLink'
 import styles from './page.module.css'
-import { ElCode, ElHeadBanDescription, ElThreeCellWrapper, Eltagparg } from './el/paragraph'
+import { ElCenterGlowSvg, ElCode, ElHeadBanDescription, ElThreeCellWrapper, Eltagparg } from './el/paragraph'
 import { Stack } from '@mui/material'
 
 
@@ -34,8 +34,7 @@ export default function Home() {
              
           </MuLink>
       </ElHeadBanDescription>
-
-      <div className={styles.center}>
+      <ElCenterGlowSvg>
         <Image
           className={styles.logo}
           src='/next.svg'
@@ -47,7 +46,7 @@ export default function Home() {
         <div className={styles.thirteen}>
           <Image src='/thirteen.svg' alt='13' width={40} height={31} priority />
         </div>
-      </div>
+      </ElCenterGlowSvg>      
 
       <ElThreeCellWrapper>
         <a

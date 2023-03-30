@@ -13,6 +13,50 @@ const ElHeadBanDescription = styled("div")`
   font-family: var(--font-tech);  
 `;
 
+
+
+const ElCenterGlowSvg = styled("div")(({theme})=> ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  position: 'relative',
+  padding: '4rem 0',
+  
+  
+  '&::before': {
+    borderRadius: '50%',
+    background: `${theme.palette.mode == "light" ? theme.palette.sunGlow.secondaryGlow: theme.palette.dimGlow.secondaryGlow}`,    
+    //width: '480px',
+     height: '360px',
+    // marginLeft: '-400px',
+
+  },
+  '&::after': {
+    background: `${theme.palette.mode == "light" ? theme.palette.sunGlow.primaryGlow: theme.palette.dimGlow.primaryGlow}`,
+    zIndex: -1,
+    width: '240px',
+    height: '180px',
+
+  },
+  '&::before, &::after': {
+    content: '""',
+    left: '50%',
+    position: 'absolute',
+    filter: 'blur(45px)',
+    transform:'translateZ(0)',    
+
+  }
+
+
+}));
+  // width: 480px;
+  // height: 360px;
+// content: '';
+// left: 50%;
+// position: absolute;
+// filter: blur(45px);
+// transform: translateZ(0);
+
 const ElThreeCellWrapper = styled("div")`
   display: grid;
   grid-template-columns: repeat(3, minmax(33%, auto));
@@ -65,4 +109,4 @@ const Eltagparg = styled(Typography,{
 
 
 
-export  { Elbody,Eltagparg,ElCode, ElHeadBanDescription, ElThreeCellWrapper }
+export  { Elbody,Eltagparg,ElCode, ElHeadBanDescription, ElThreeCellWrapper,ElCenterGlowSvg }
