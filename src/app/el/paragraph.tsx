@@ -91,12 +91,22 @@ const ElShadowSvg = styled(Typography, {
   },
 }))
 
-const ElThreeCellWrapper = styled('div')`
-  display: grid;
-  grid-template-columns: repeat(3, minmax(33%, auto));
-  width: 100%;
-  max-width: var(--max-width);
-`
+const ElThreeCellWrapper=styled("div")(({theme})=>({
+  display: 'grid',
+  gridTemplateColumns: 'repeat(3, minmax(33%, auto))',
+  width: '100%',
+  maxWidth: 'var(--max-width)',
+  
+  [theme.breakpoints.down('lg')]: {
+    gridTemplateColumns: '1fr',
+    marginBottom: '120px',
+    maxWidth: '320px',
+    textAlign: 'center',
+    alignSelf: 'center'
+  }
+
+}));
+
 
 const Elbody = styled('body')`
   max-width: 100vw;
