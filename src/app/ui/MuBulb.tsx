@@ -18,7 +18,7 @@ export default function MuBulb(props: LinkProps & { title: string }) {
   return (
     <Card variant='outlined' sx={{boxShadow:'none', border:'none'}} className='hover:shadow-md m-5'>
       <CardContent>
-        <MuLink href={href} {...other}>
+        <MuLink href={href} {...other} sx={{ textDecorationLine: 'none', color:'inherit' }}>
           <Typography variant='h5' sx={{ display: 'flex' }}>
             {title}
             <Typography sx={{ mt: 0, mb: 3 }} color='text.secondary'>
