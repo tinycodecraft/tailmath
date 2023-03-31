@@ -2,12 +2,6 @@ import { createTheme } from '@mui/material/styles'
 
 
 const MuTheme = createTheme({
-  block: {
-    square: {
-      width: '75px',
-      height: '75px',
-    }
-  },
   
   components: {
     MuiUseMediaQuery: {
