@@ -13,14 +13,15 @@ import {
 } from './el/paragraph'
 import { Stack } from '@mui/material'
 import MuBulb from './ui/MuBulb'
-import { MuTextFormatter } from './el/smallcontrol'
+import { MuPassword } from './el/smallcontrol'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <main className='flex flex-col min-h-screen justify-between justify-items-center p-[6rem]'>
-      
+      <MuPassword ></MuPassword>
       <ElHeadBanDescription>
         
         <Eltagparg variant='plight'>
