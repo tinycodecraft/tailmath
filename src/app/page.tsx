@@ -13,13 +13,16 @@ import {
 } from './el/paragraph'
 import { Stack } from '@mui/material'
 import MuBulb from './ui/MuBulb'
+import { MuTextFormatter } from './el/smallcontrol'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <main className='flex flex-col min-h-screen justify-between justify-items-center p-[6rem]'>
+      
       <ElHeadBanDescription>
+        
         <Eltagparg variant='plight'>
           Get second by editing&nbsp;<ElCode>src/app/page.tsx</ElCode>
         </Eltagparg>
@@ -58,7 +61,7 @@ export default function Home() {
         <MuBulb
           title='Docs'
           href='https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-          className='no-underline text-inherit'
+          
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -70,7 +73,7 @@ export default function Home() {
         <MuBulb
           title='Templates'
           href='https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-          className='no-underline text-inherit'
+          
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -80,7 +83,7 @@ export default function Home() {
         <MuBulb
           title='Deploy'
           href='https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-          className='no-underline text-inherit'
+          
           target='_blank'
           rel='noopener noreferrer'
         >
