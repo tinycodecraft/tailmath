@@ -27,7 +27,7 @@ export default function Home() {
           Get second by editing&nbsp;<ElCode>src/app/page.tsx</ElCode>
         </Eltagparg>
         <MuLink
-          className='no-underline text-inherit'
+          sx={{ textDecorationLine: 'none', color: 'inherit' }}
           href='https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
           target='_blank'
           rel='noopener noreferrer'
