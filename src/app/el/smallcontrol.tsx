@@ -135,7 +135,11 @@ export function MuCheckList(props: ItemsProps & FormGroupProps & LabelItemProps 
 
     )
 }
-
+/*
+   AutoComplete attribute freeSolo if value entered freely
+   AutoComplete attribute options allow list of other object type
+   such that TextField value will be changed to value of that object type
+*/
 export function MuAutoCompleteList(props:{ items: string[], label: string} & ValueChangeProps){
     const { items,label,valueChange} = props;
     const [value, setValue] =useState<string|null>(null)
