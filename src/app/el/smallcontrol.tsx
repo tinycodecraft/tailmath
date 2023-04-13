@@ -99,7 +99,7 @@ export function MuRadioList(props: ItemsProps & RadioGroupProps & LabelItemProps
 
 export function MuCheckList(props: ItemsProps & FormGroupProps & LabelItemProps )
 {
-    const { onChange,  prompt,label,list,...other}=props;
+    const { listChange,onChange,  prompt,label,list,...other}=props;
     const keys = list.map((item)=> item.key);
     const [checkValues,setCheckValues]=useState<string[]>([])
     const changeValue = (event:React.ChangeEvent<HTMLInputElement> )=> {
@@ -112,7 +112,10 @@ export function MuCheckList(props: ItemsProps & FormGroupProps & LabelItemProps 
         else{
            setCheckValues( checkValues.filter((v)=> v!==event.target.value))
         }
-        
+        if(listChange!==undefined)
+        {
+            listChange(event);
+        }
     }
     return (
         <Box>
