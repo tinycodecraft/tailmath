@@ -43,8 +43,14 @@ export function MuPassword(props: TextFieldProps){
         </TextField>
     )
 }
-
-export function MuSelectList(props: ItemsProps & TextFieldProps)
+/*
+    do multiple
+    SelectProps ={{
+        multiple: true
+    }}
+    label is the display inside the select list without selection
+*/
+export function MuSelectList(props: ItemsProps & TextFieldProps )
 {
     const { list, ...other } = props;
 
