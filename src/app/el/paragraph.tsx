@@ -28,7 +28,7 @@ const ElCenterGlowSvg = styled('div')(({ theme }) => ({
     }`,
     //width: '480px',
     height: '360px',
-    // marginLeft: '-400px',
+    //marginLeft: '-400px',
   },
   '&::after': {
     background: `${
@@ -67,7 +67,7 @@ const ElShadowSvg = styled(Typography, {
     animation: '6s rotate linear infinite',
     width: '200%',
     height: '200%',
-    background: 'var(--tile-border)',
+    background: `${theme.palette.mode== 'light' ? theme.palette.sunTile.borderColor: theme.palette.dimTile.borderColor}`,
   },
 
   '&::after': {
