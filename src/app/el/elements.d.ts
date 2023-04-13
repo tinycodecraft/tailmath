@@ -18,6 +18,10 @@ export interface ItemProps {
 export interface ItemsProps {
     list: ItemProps[];
     listChange?: React.ChangeEventHandler<HTMLInputElement>;
+    
+}
+export interface ValueChangeProps{
+    valueChange: (event:React.SyntheticEvent,value:string|null) => void;
 }
 
 export interface LabelItemProps {

@@ -1,4 +1,4 @@
-import { Checkbox, FormControl, FormControlLabel, FormGroup, FormGroupProps, FormLabel, InputAdornment, MenuItem, Radio, RadioGroup, RadioGroupProps, TextField, TextFieldProps, styled } from "@mui/material";
+import { Autocomplete, Checkbox, FormControl, FormControlLabel, FormGroup, FormGroupProps, FormLabel, InputAdornment, MenuItem, Radio, RadioGroup, RadioGroupProps, TextField, TextFieldProps, styled } from "@mui/material";
 import { Stack,Box,Button,IconButton, ButtonGroup,ToggleButton,ToggleButtonGroup } from "@mui/material"
 import React, { useState } from "react";
 import FormatBoldIcon from "@mui/icons-material/FormatBold"
@@ -6,7 +6,7 @@ import FormatItalicIcon from "@mui/icons-material/FormatItalic"
 import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined"
 import VisibilityIcon from "@mui/icons-material/Visibility"
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff"
-import { ItemsProps,ItemProps, LabelItemProps } from "./elements";
+import { ItemsProps,ItemProps, LabelItemProps, ValueChangeProps } from "./elements";
 
 
 export function MuTextFormatter(){
@@ -99,7 +99,7 @@ export function MuRadioList(props: ItemsProps & RadioGroupProps & LabelItemProps
 
 export function MuCheckList(props: ItemsProps & FormGroupProps & LabelItemProps )
 {
-    const { listChange,onChange,  prompt,label,list,...other}=props;
+    const { listChange, prompt,label,list,...other}=props;
     const keys = list.map((item)=> item.key);
     const [checkValues,setCheckValues]=useState<string[]>([])
     const changeValue = (event:React.ChangeEvent<HTMLInputElement> )=> {
@@ -134,4 +134,28 @@ export function MuCheckList(props: ItemsProps & FormGroupProps & LabelItemProps 
         </Box>
 
     )
+}
+
+export function MuAutoCompleteList(props:{ items: string[], label: string} & ValueChangeProps){
+    const { items,label,valueChange} = props;
+    const [value, setValue] =useState<string|null>(null)
+    const myChange = (event:any,newValue:string|null)=>{
+        setValue(newValue);
+        if(valueChange!==undefined){
+            valueChange(event,newValue);
+        }
+
+    }
+    return (
+        <Stack spacing={2} width='250px'>
+            <Autocomplete
+            options={items}
+            renderInput={(params)=> <TextField {...params} label={label} value={value} />}
+            onChange={myChange}
+
+            />
+        </Stack>
+    )
+
+
 }
