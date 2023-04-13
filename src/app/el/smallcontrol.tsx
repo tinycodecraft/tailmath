@@ -1,4 +1,4 @@
-import { FormControl, FormControlLabel, FormLabel, InputAdornment, MenuItem, Radio, RadioGroup, RadioGroupProps, TextField, TextFieldProps, styled } from "@mui/material";
+import { Checkbox, FormControl, FormControlLabel, FormGroup, FormGroupProps, FormLabel, InputAdornment, MenuItem, Radio, RadioGroup, RadioGroupProps, TextField, TextFieldProps, styled } from "@mui/material";
 import { Stack,Box,Button,IconButton, ButtonGroup,ToggleButton,ToggleButtonGroup } from "@mui/material"
 import React, { useState } from "react";
 import FormatBoldIcon from "@mui/icons-material/FormatBold"
@@ -97,3 +97,38 @@ export function MuRadioList(props: ItemsProps & RadioGroupProps & LabelItemProps
     )
 }
 
+export function MuCheckList(props: ItemsProps & FormGroupProps & LabelItemProps )
+{
+    const { onChange,  prompt,label,list,...other}=props;
+    const keys = list.map((item)=> item.key);
+    const [checkValues,setCheckValues]=useState<string[]>([])
+    const changeValue = (event:React.ChangeEvent<HTMLInputElement> )=> {
+        const index = checkValues.indexOf(event.target.value);
+        console.log(index);
+        console.log(event.target.value);
+        if(index===-1){
+            setCheckValues([...checkValues,event.target.value])
+        }
+        else{
+           setCheckValues( checkValues.filter((v)=> v!==event.target.value))
+        }
+        
+    }
+    return (
+        <Box>
+            <FormControl>
+                <FormLabel>{prompt}</FormLabel>
+                <FormGroup {...other}>
+                {
+                    list.map((item:ItemProps,_)=>{
+                        return <FormControlLabel key={item.key} label={item.value}  control={<Checkbox checked={checkValues.includes(item.key)} value={item.key} onChange={changeValue} />} />
+                    })
+                }
+                </FormGroup>
+
+
+            </FormControl>
+        </Box>
+
+    )
+}
