@@ -11,17 +11,21 @@ import {
   ElThreeCellWrapper,
   Eltagparg,
 } from './el/paragraph'
-import { Stack } from '@mui/material'
 import MuBulb from './ui/MuBulb'
-import { MuPassword } from './el/smallcontrol'
+import { ItemsProps } from './el/elements'
+import { MuSelectList } from './el/smallcontrol'
+import React, { useState } from 'react'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+
   return (
+    
     <main className='flex flex-col min-h-screen justify-between justify-items-center p-[6rem]'>
-      <MuPassword ></MuPassword>
+   
       <ElHeadBanDescription>
         
         <Eltagparg variant='plight'>
