@@ -4,6 +4,8 @@ import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon'
 import Typography from '@mui/material/Typography'
 import MuLink, { LinkProps } from './MuLink'
 import { Box, Card, CardContent } from '@mui/material'
+import { yellow } from '@mui/material/colors'
+
 
 function LightBulbIcon(props: SvgIconProps) {
   return (
@@ -14,9 +16,14 @@ function LightBulbIcon(props: SvgIconProps) {
 }
 
 export default function MuBulb(props: LinkProps & { title: string }) {
-  const { title, href, children, ...other } = props
+  const { title, href, children, ...other } = props;
+  const alertcolor = yellow[200];
   return (
-    <Card variant='outlined' sx={{boxShadow:'none', border:'none'}} className='hover:shadow-md m-5'>
+    <Card variant='elevation' className='m-5' sx={{
+      '&:hover': {
+        backgroundColor: `${alertcolor}`
+      }
+    }}>
       <CardContent>
         <MuLink href={href} {...other} sx={{ textDecorationLine: 'none', color:'inherit' }}>
           <Typography variant='h5' sx={{ display: 'flex' }}>
