@@ -14,6 +14,13 @@ export interface ItemProps {
 
 
 }
+export interface AccordionItemProps {
+    title: string;
+    key:string;
+    children: React.ReactNode | undefined | string;
+}
+
+
 
 export interface ItemsProps {
     list: ItemProps[];

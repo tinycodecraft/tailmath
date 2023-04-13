@@ -1,12 +1,13 @@
-import { Autocomplete, Checkbox, FormControl, FormControlLabel, FormGroup, FormGroupProps, FormLabel, InputAdornment, MenuItem, Radio, RadioGroup, RadioGroupProps, TextField, TextFieldProps, styled } from "@mui/material";
-import { Stack,Box,Button,IconButton, ButtonGroup,ToggleButton,ToggleButtonGroup } from "@mui/material"
+import { Accordion, Autocomplete, Checkbox, FormControl, FormControlLabel, FormGroup, FormGroupProps, FormLabel, InputAdornment, MenuItem, Radio, RadioGroup, RadioGroupProps, TextField, TextFieldProps,ToggleButton,ToggleButtonGroup,Stack,Box,IconButton,AccordionSummary,AccordionDetails } from "@mui/material";
+
 import React, { useState } from "react";
 import FormatBoldIcon from "@mui/icons-material/FormatBold"
 import FormatItalicIcon from "@mui/icons-material/FormatItalic"
 import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined"
 import VisibilityIcon from "@mui/icons-material/Visibility"
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff"
-import { ItemsProps,ItemProps, LabelItemProps, ValueChangeProps } from "./elements";
+import { ItemsProps,ItemProps, LabelItemProps, ValueChangeProps, AccordionItemProps } from "./elements";
+import { ExpandMore } from "@mui/icons-material";
 
 
 export function MuTextFormatter(){
@@ -159,6 +160,36 @@ export function MuAutoCompleteList(props:{ items: string[], label: string} & Val
 
             />
         </Stack>
+    )
+
+
+}
+
+export function MuAccordionList(props:{ items: AccordionItemProps[] }){
+    const [expanded,setExpanded] = useState<string|false>(false);
+    const {items} = props;
+    const getitemChange =(key:string)=> {
+    return (event:any,isExpanded:boolean)=> {
+        if(isExpanded){
+            setExpanded(key);
+        };
+        
+    };
+    };
+
+    return (
+    <Box>
+        {
+            items.map((accItem)=> {
+                return <Accordion key={accItem.key} expanded={expanded===accItem.key} onChange={getitemChange(accItem.key)}>
+                    <AccordionSummary expandIcon={<ExpandMore />}>{accItem.title}</AccordionSummary>
+                    <AccordionDetails>{accItem.children}</AccordionDetails>
+                </Accordion>
+            })
+        }
+
+    </Box>
+
     )
 
 

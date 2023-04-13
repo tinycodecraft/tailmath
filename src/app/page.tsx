@@ -1,4 +1,5 @@
 'use client'
+
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import MuLink from './ui/MuLink'
@@ -13,8 +14,9 @@ import {
 } from './el/paragraph'
 import MuBulb from './ui/MuBulb'
 import { ItemsProps } from './el/elements'
-import { MuAutoCompleteList, MuCheckList, MuRadioList, MuSelectList } from './el/smallcontrol'
+import { MuAccordionList, MuAutoCompleteList, MuCheckList, MuRadioList, MuSelectList } from './el/smallcontrol'
 import React, { useState } from 'react'
+import { Box} from "@mui/material"
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -31,6 +33,7 @@ export default function Home() {
   return (
     
     <main className='flex flex-col min-h-screen justify-between justify-items-center p-[6rem]'>
+
 
      
       <ElHeadBanDescription>
