@@ -1,4 +1,4 @@
-import { InputAdornment, MenuItem, TextField, TextFieldProps, styled } from "@mui/material";
+import { FormControl, FormControlLabel, FormLabel, InputAdornment, MenuItem, Radio, RadioGroup, RadioGroupProps, TextField, TextFieldProps, styled } from "@mui/material";
 import { Stack,Box,Button,IconButton, ButtonGroup,ToggleButton,ToggleButtonGroup } from "@mui/material"
 import React, { useState } from "react";
 import FormatBoldIcon from "@mui/icons-material/FormatBold"
@@ -6,7 +6,7 @@ import FormatItalicIcon from "@mui/icons-material/FormatItalic"
 import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined"
 import VisibilityIcon from "@mui/icons-material/Visibility"
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff"
-import { ItemsProps,ItemProps } from "./elements";
+import { ItemsProps,ItemProps, LabelItemProps } from "./elements";
 
 
 export function MuTextFormatter(){
@@ -66,3 +66,34 @@ export function MuSelectList(props: ItemsProps & TextFieldProps )
         </Box>
     )
 }
+
+export function MuRadioList(props: ItemsProps & RadioGroupProps & LabelItemProps){
+    const {prompt,label,list, ...other} = props;
+
+    return (
+        <Box>
+            <FormControl>
+                <FormLabel id={`${label}-form`}>
+                    {prompt}
+                </FormLabel>
+                <RadioGroup
+                    name={label}
+                    // eslint-disable-next-line jsx-a11y/aria-props
+                    aria-aria-labelledby={`${label}-form`}
+                    {...other}
+                    
+                    >
+                        {
+                        list.map((item: ItemProps,_)=>{
+                            return <FormControlLabel key={item.key}  control={<Radio />} label={item.value} value={item.key} />
+                            
+                        })
+
+                        }
+
+                    </RadioGroup>                
+            </FormControl>
+        </Box>
+    )
+}
+

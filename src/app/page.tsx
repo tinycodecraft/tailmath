@@ -13,14 +13,20 @@ import {
 } from './el/paragraph'
 import MuBulb from './ui/MuBulb'
 import { ItemsProps } from './el/elements'
-import { MuSelectList } from './el/smallcontrol'
+import { MuRadioList, MuSelectList } from './el/smallcontrol'
 import React, { useState } from 'react'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-
+  const [age,setAge] = useState('')
+  const ages: ItemsProps = {
+    list: [{key: '0-2',value:'0-2'},{key: '3-4',value: '3-4'},{key: '5-10',value: '5-10'},{key:'10 or over', value: '10 or over'}]
+  }
+  const ageChange = (event: React.ChangeEvent<HTMLInputElement>)=> {
+    setAge(event.target.value)
+  }
 
   return (
     
