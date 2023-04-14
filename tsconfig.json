@@ -24,6 +24,7 @@
       "@/assets/*":["./src/app/assets/*"],
       "@/lib/ui/*": ["./src/app/ui/*"],
       "@/lib/el/*": ["./src/app/el/*"],
+      "@/lib/tx/*": ["./src/app/tx/*"],
       "@/*": ["./src/*"],
       
     }
