@@ -1,4 +1,5 @@
-import { Accordion, Autocomplete, Checkbox, FormControl, FormControlLabel, FormGroup, FormGroupProps, FormLabel, InputAdornment, MenuItem, Radio, RadioGroup, RadioGroupProps, TextField, TextFieldProps,ToggleButton,ToggleButtonGroup,Stack,Box,IconButton,AccordionSummary,AccordionDetails } from "@mui/material";
+/* eslint-disable @next/next/no-img-element */
+import { Accordion, Autocomplete, Checkbox, FormControl, FormControlLabel, FormGroup, FormGroupProps, FormLabel, InputAdornment, MenuItem, Radio, RadioGroup, RadioGroupProps, TextField, TextFieldProps,ToggleButton,ToggleButtonGroup,Stack,Box,IconButton,AccordionSummary,AccordionDetails,ImageList,ImageListItem,ImageListItemBar } from "@mui/material";
 
 import React, { useState } from "react";
 import FormatBoldIcon from "@mui/icons-material/FormatBold"
@@ -6,8 +7,9 @@ import FormatItalicIcon from "@mui/icons-material/FormatItalic"
 import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined"
 import VisibilityIcon from "@mui/icons-material/Visibility"
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff"
-import { ItemsProps,ItemProps, LabelItemProps, ValueChangeProps, AccordionItemProps } from "./elements";
+import { ItemsProps,ItemProps, LabelItemProps, ValueChangeProps, AccordionItemProps, ImageItemLinkProps, ImageListWrapperProps } from "./elements";
 import { ExpandMore } from "@mui/icons-material";
+import Image from "next/image";
 
 
 export function MuTextFormatter(){
@@ -192,5 +194,31 @@ export function MuAccordionList(props:{ items: AccordionItemProps[] }){
 
     )
 
+
+}
+
+export function MuImageList(props: ImageListWrapperProps){
+
+    const {cols, items,rowHeight,wrapperHeight,wrapperWidth,itemHeight,itemWidth }=props;
+    const imgwidth = itemWidth ===undefined ? wrapperWidth /2 : itemWidth;
+
+    return (
+        <Box sx={{ width: wrapperWidth, height: wrapperHeight, overflowY: 'scroll' }}>
+            <ImageList variant="masonry" cols={cols} gap={8}>
+                {
+                    items.map((item)=>{
+                        return (
+                        <ImageListItem key={item.url}>
+                            
+                            <img src={`${item.url}?width=${imgwidth}&fit=crop&auto=format&dpr=2`} alt={item.title} loading="lazy"  />
+                            <ImageListItemBar title={item.title} />
+                        </ImageListItem>);
+                    })
+                }
+
+            </ImageList>
+
+        </Box>
+    )
 
 }

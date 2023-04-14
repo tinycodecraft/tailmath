@@ -13,25 +13,27 @@ import {
   Eltagparg,
 } from './el/paragraph'
 import MuBulb from './ui/MuBulb'
-import { ItemsProps } from './el/elements'
-import { MuAccordionList, MuAutoCompleteList, MuCheckList, MuRadioList, MuSelectList } from './el/smallcontrol'
+import { ImageListWrapperProps, ItemsProps } from './el/elements'
+import {
+  MuAccordionList,
+  MuAutoCompleteList,
+  MuCheckList,
+  MuImageList,
+  MuRadioList,
+  MuSelectList,
+} from './el/smallcontrol'
 import React, { useState } from 'react'
-import { Box} from "@mui/material"
-
+import { Box } from '@mui/material'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  
 
   return (
-    
     <main className='flex flex-col min-h-screen justify-between justify-items-center p-[6rem]'>
-
-
-     
+      
       <ElHeadBanDescription>
-
-        
         <Eltagparg variant='plight'>
           Get second by editing&nbsp;<ElCode>src/app/page.tsx</ElCode>
         </Eltagparg>
@@ -70,7 +72,6 @@ export default function Home() {
         <MuBulb
           title='Docs'
           href='https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-          
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -82,7 +83,6 @@ export default function Home() {
         <MuBulb
           title='Templates'
           href='https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-          
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -92,7 +92,6 @@ export default function Home() {
         <MuBulb
           title='Deploy'
           href='https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-          
           target='_blank'
           rel='noopener noreferrer'
         >

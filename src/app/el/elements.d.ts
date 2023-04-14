@@ -1,5 +1,6 @@
 import { RadioProps } from "@mui/material";
 import React, { PropsWithChildren  } from "react";
+import internal from "stream";
 
 export as namespace elementSps;
 
@@ -20,7 +21,21 @@ export interface AccordionItemProps {
     children: React.ReactNode | undefined | string;
 }
 
+export interface ImageItemLinkProps {
+    title: string;
+    url:string;
+}
+export interface ImageListWrapperProps {
 
+    wrapperWidth: number;
+    wrapperHeight: number;
+    rowHeight: number;
+    itemHeight?: number | undefined;
+    itemWidth?: number | undefined;
+    items: ImageItemLinkProps[];
+    cols: number;
+
+}
 
 export interface ItemsProps {
     list: ItemProps[];
