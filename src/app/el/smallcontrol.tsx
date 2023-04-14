@@ -7,9 +7,9 @@ import FormatItalicIcon from "@mui/icons-material/FormatItalic"
 import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined"
 import VisibilityIcon from "@mui/icons-material/Visibility"
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff"
-import { ItemsProps,ItemProps, LabelItemProps, ValueChangeProps, AccordionItemProps, ImageItemLinkProps, ImageListWrapperProps } from "./elements";
+import { ItemsProps,ItemProps, LabelItemProps, ValueChangeProps, AccordionItemProps,  ImageListWrapperProps } from "./elements";
 import { ExpandMore } from "@mui/icons-material";
-import Image from "next/image";
+
 
 
 export function MuTextFormatter(){

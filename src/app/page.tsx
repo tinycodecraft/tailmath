@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import MuLink from './ui/MuLink'
+import MuLink from '@/lib/ui/MuLink'
 import styles from './page.module.css'
 import {
   ElCenterGlowSvg,
@@ -11,19 +11,9 @@ import {
   ElShadowSvg,
   ElThreeCellWrapper,
   Eltagparg,
-} from './el/paragraph'
-import MuBulb from './ui/MuBulb'
-import { ImageListWrapperProps, ItemsProps } from './el/elements'
-import {
-  MuAccordionList,
-  MuAutoCompleteList,
-  MuCheckList,
-  MuImageList,
-  MuRadioList,
-  MuSelectList,
-} from './el/smallcontrol'
-import React, { useState } from 'react'
-import { Box } from '@mui/material'
+} from '@/lib/el/paragraph'
+import MuBulb from '@/lib/ui/MuBulb'
+import React from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 

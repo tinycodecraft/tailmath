@@ -1,10 +1,11 @@
 'use client'
 import './globals.css'
 import { Global, css } from '@emotion/react'
-import { MuTheme } from './ui/themes'
+import { MuTheme } from '@/lib/ui/themes'
 import { ThemeProvider, CssBaseline } from '@mui/material'
-import { Elbody } from './el/paragraph'
+import { Elbody } from '@/lib/el/paragraph'
 import localFont from 'next/font/local'
+
 
 const novaMono = localFont({
   src: './assets/nova_mono/nova-mono-v18-latin-regular.ttf',
