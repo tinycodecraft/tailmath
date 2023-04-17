@@ -6,7 +6,6 @@ import { ThemeProvider, CssBaseline } from '@mui/material'
 import { Elbody } from '@/lib/el/paragraph'
 import localFont from 'next/font/local'
 
-
 const novaMono = localFont({
   src: './assets/nova_mono/nova-mono-v18-latin-regular.ttf',
   variable: '--font-machine',
@@ -43,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         />
 
-        <Elbody>{children}</Elbody>
+        {children}
       </ThemeProvider>
     </html>
   )
