@@ -1,5 +1,5 @@
 'use client'
-import './globals.css'
+import '@/styles/globals.css'
 import { Global, css } from '@emotion/react'
 import { MuTheme } from '@/lib/ui/themes'
 import { ThemeProvider, CssBaseline } from '@mui/material'
