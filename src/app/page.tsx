@@ -1,10 +1,8 @@
 
 'use client'
-import '@/styles/globals.css'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import MuLink from '@/lib/ui/MuLink'
-import NextLink from 'next/link'
 import styles from './page.module.css'
 import {
   ElCenterGlowSvg,
@@ -26,7 +24,7 @@ export default function Home() {
       <main className='flex flex-col min-h-screen justify-between justify-items-center p-[6rem]'>
         <ElHeadBanDescription>
           <Eltagparg variant='plight'>
-            Learn more about me<MuLink href='/about' className='hover:text-red-500 no-underline'>Click Here</MuLink>
+            Learn more about <MuLink href='/about' className='hover:text-red-500 no-underline'>me</MuLink>
           </Eltagparg>
           <Eltagparg variant='plight'>
             Get second by editing&nbsp;<ElCode>src/app/page.tsx</ElCode>

@@ -11,15 +11,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        whatever: {
-          dark: '#LC2026'
+        carthome: {
+          beige: '#FEF5EC',
+          black: '#111'
         }
       },
       fontFamily:{
         baseMachine: [ 'var(--font-machine)', ...fontFamily.sans],
         baseTech: ['var(--font-tech)',...fontFamily.serif],
+      },
+      
+      minHeight: {
+        screenHeightWithoutHeader: 'calc(100vh - 101px)'
+      },
+      height: {
+        screenHeightWithoutHeader: 'calc(100vh - 101px)'
       }
-
 
     },
   },
