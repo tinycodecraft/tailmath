@@ -32,6 +32,7 @@ export default function MuThemeProvider({children}: { children: React.ReactNode}
     <Global
       styles={css`
         :root {
+          --carthome-beige: '#FEF5EC',
           --font-lora: ${lora.style.fontFamily};
           --font-machine: ${novaMono.style.fontFamily};
           --font-tech: ${techMono.style.fontFamily};

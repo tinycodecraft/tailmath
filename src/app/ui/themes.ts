@@ -1,5 +1,16 @@
 import { createTheme } from '@mui/material/styles'
 
+const MuCartTheme=createTheme({
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        colorPrimary: {
+          backgroundColor: 'var(--carthome-beige)'
+        }
+      }
+    }
+  }
+})
 
 const MuTheme = createTheme({
   
@@ -124,4 +135,4 @@ const MuTheme = createTheme({
   },
 })
 
-export { MuTheme }
+export { MuTheme,MuCartTheme }
