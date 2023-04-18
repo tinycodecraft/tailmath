@@ -17,10 +17,11 @@ module.exports = {
         }
       },
       fontFamily:{
+        serif: ['var(--font-lora)'],
         baseMachine: [ 'var(--font-machine)', ...fontFamily.sans],
         baseTech: ['var(--font-tech)',...fontFamily.serif],
       },
-      
+
       minHeight: {
         screenHeightWithoutHeader: 'calc(100vh - 101px)'
       },

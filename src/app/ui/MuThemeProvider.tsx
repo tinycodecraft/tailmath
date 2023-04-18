@@ -4,7 +4,14 @@ import { Global, css } from '@emotion/react'
 import { MuTheme } from '@/lib/ui/themes'
 import { ThemeProvider, CssBaseline } from '@mui/material'
 import localFont from 'next/font/local'
+import { Lora } from 'next/font/google'
 
+const lora = Lora({
+  weight: ["400", "500"],
+  variable: "--font-lora",
+  display: "swap",
+  subsets:["latin"]
+});
 
 const novaMono = localFont({
   src: '../assets/nova_mono/nova-mono-v18-latin-regular.ttf',
@@ -25,6 +32,7 @@ export default function MuThemeProvider({children}: { children: React.ReactNode}
     <Global
       styles={css`
         :root {
+          --font-lora: ${lora.style.fontFamily};
           --font-machine: ${novaMono.style.fontFamily};
           --font-tech: ${techMono.style.fontFamily};
           --max-width: calc(100vw - 10px);
